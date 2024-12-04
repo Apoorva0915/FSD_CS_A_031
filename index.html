@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//  function hello(){
+//     document.write("hello")
+//  }
+//  hello()
+//  function sum(a,b){
+//     document.write(a+b)
+//  }
+//  const sum1=(a,b)=>{
+//    return(
+//       document.write(a+b)
+//    )
+//  }
+//  sum(2,3)
+//  sum1(2,3)
+
+// const promise = fetch("https://api.github.com/users/Apoorva0915")
+// promise.then(
+//     (res) => {
+//         return res.json();
+//     }
+// ).then((data) => console.log(data)
+// ).catch((err) => console.log(err))
+
+
+// function register() {
+//     console.log("register");
+
+// }
+// function sendemail() {
+//     console.log("register");
+
+// }
+// function login() {
+//     console.log("register");
+
+// }
+// function getuserdata() {
+//     console.log("data");
+
+// }
+// function displayuser() {
+//     setTimeout(() => {
+//         console.log("timeout");
+//     }, 500);
+
+// }
+
+// register();
+// sendemail();
+// displayuser();
+// login();
+// getuserdata();
+ 
+
+function register() {
+  // waitForFewMilliSeconds(5);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+     // return reject("Network Error");
+      console.log("register end");
+        resolve();
+    }, 5000);
+  });
+}
+function sendEmail() {
+  // waitForFewMilliSeconds(5);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("sendEmail end");
+      resolve();
+    }, 5000);
+  });
+}
+function Login() {
+  // waitForFewMilliSeconds(5);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Login end");
+      resolve();
+    }, 5000);
+  });
+}
+function getUserData() {
+  // waitForFewMilliSeconds(5);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("getUserData end");
+      resolve(); 
+    }, 5000);
+  });
+}
+function displayData() {
+  // waitForFewMilliSeconds(5);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("displayData end");
+      resolve();
+    }, 5000);
+  });
+}
+
+// function waitForFewMilliSeconds(sec){
+//     const ms=(sec*1000)+new Date().getTime()
+//     while(ms>new Date()){
+
+//     }
+// }
+//to maintain the sequence of calling like firstly register then other we have to use call back approach
+//callback function has a problem called calback hell
+//we will solve the call backfunction using pron mises
+//callback hell
+// register(function(){
+//     sendEmail(function(){
+//         Login(function(){
+//             getUserData(function(){
+//                 displayData()
+//             })
+//         })
+//     })
+// })
+//solution of callback HEll
+async function authenticate(){
+    try{
+await register();
+await sendEmail();
+await Login();
+await getUserData();
+await displayData();
+}
+catch(err){
+    console.log("Error:",err);
+}
+}
+authenticate();
+//pROMISE Chaining
+
+</script>
+</html>
